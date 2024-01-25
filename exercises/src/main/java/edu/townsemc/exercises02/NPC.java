@@ -30,5 +30,6 @@ public class NPC {
         if(s > 0 && s<15){
             Strength = s;
         }
+
     }
 }

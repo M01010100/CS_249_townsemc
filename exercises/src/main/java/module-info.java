@@ -7,4 +7,5 @@ module exercisesmod {
 
     exports  edu.realemj.exercises00;
     exports edu.townsemc.exercises02;
+    exports edu.townsemc.exercises03;
 }

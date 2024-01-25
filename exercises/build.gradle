@@ -25,7 +25,7 @@ test {
 }
 
 application {
-    mainClass = "edu.townsemc.exercises02.Wasteland"
+    mainClass = "edu.townsemc.exercises03.FoodRationer"
     mainModule = "exercisesmod"
 }
 

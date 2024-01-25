@@ -9,11 +9,12 @@ public class Wasteland {
         System.out.println("Bob's Health: " + bob.getHealth());
         bob.setHealth(125);
         System.out.println(bob.getName() + "'s Health: " + bob.getHealth());
-        Horrigan.setHealth(250);
-        System.out.println(Horrigan.getName() + "'s Health: " + Horrigan.getHealth());
-        System.out.println(Horrigan.getName() + "'s Strength: " + Horrigan.getStrength());
-        Horrigan.setStrength(12);
-        System.out.println(Horrigan.getName() + "'s Strength: " + Horrigan.getStrength());
 
+        Horrigan.setHealth(999);
+        System.out.println(Horrigan.getName() + "'s Health: " + Horrigan.getHealth());
+
+        System.out.println(Horrigan.getName() + "'s Strength: " + Horrigan.getStrength());
+        Horrigan.setStrength(15);
+        System.out.println(Horrigan.getName() + "'s Strength: " + Horrigan.getStrength());
     }
 }
