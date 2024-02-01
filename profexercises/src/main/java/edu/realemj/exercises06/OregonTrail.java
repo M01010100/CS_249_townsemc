@@ -10,5 +10,10 @@ public class OregonTrail {
 
         System.out.println("BEFORE:");
         System.out.println(supplies);
+
+        store.enter(input, supplies);
+
+        System.out.println("AFTER:");
+        System.out.println(supplies);
     }
 }
