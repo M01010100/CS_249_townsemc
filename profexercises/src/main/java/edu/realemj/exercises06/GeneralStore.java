@@ -45,6 +45,7 @@ public class GeneralStore {
 
         switch(itemName) {
             case "food" -> {
+                /*
                 int current = supplies.getTotalFood();
                 int updated = current + cnt;
                 if(updated < 0) {
@@ -52,6 +53,8 @@ public class GeneralStore {
                     updated = 0;
                 }
                 supplies.setTotalFood(updated);
+                */
+                cnt = supplies.updateTotalFood(cnt);
             }
             default -> {
                 System.out.println("I'm sorry but we don't carry " + itemName + ".");

@@ -8,12 +8,15 @@ public class OregonTrail {
         Supplies supplies = new Supplies();
         GeneralStore store = new GeneralStore();
 
-        System.out.println("BEFORE:");
-        System.out.println(supplies);
+        printSupplies("BEFORE:", supplies);
 
         store.enter(input, supplies);
 
-        System.out.println("AFTER:");
+        printSupplies("AFTER:", supplies);
+    }
+
+    private static void printSupplies(String message, Supplies supplies) {
+        System.out.println(message);
         System.out.println(supplies);
     }
 }
