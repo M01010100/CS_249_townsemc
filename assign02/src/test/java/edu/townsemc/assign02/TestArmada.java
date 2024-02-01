@@ -1,4 +1,4 @@
-package edu.realemj.assign02;
+package edu.townsemc.assign02;
 // NOTE: CHANGE realemj to YOUR SITNETID!!!
 import edu.realemj.testing.*;
 import org.testng.Assert;
