@@ -39,14 +39,18 @@ public class GeneralStore {
         String itemName = item.toLowerCase();
         switch(itemName) {
             case "food" -> {
-               int current = supplies.getTotalFood();
+               /*
+                int current = supplies.getTotalFood();
                int updated = current + cnt;
                if(updated < 0){
                    cnt = cnt - updated;
                    updated = 0;
                }
                supplies.setTotalFood(updated);
+                */
+                cnt = supplies.updateTotalFood(cnt);
             }
+
             default -> {
                 System.out.println("I'm Sorry but we don't carry" + itemName + ".");
                 cnt = 0;

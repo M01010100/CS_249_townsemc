@@ -10,7 +10,14 @@ public class Supplies {
     public void setTotalFood(int food){
         totalFood = food;
     }
-
+    public int updateTotalFood(int cnt){
+        totalFood = totalFood +cnt;
+        if(totalFood < 0){
+            cnt = cnt - totalFood;
+            totalFood = 0;
+        }
+        return cnt;
+    }
     public String toString() {
         String s = "";
         s += "*****************\n";

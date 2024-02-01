@@ -16,4 +16,5 @@ public class OregonTrail {
         System.out.println("AFTER: ");
         System.out.println(supplies);
     }
+    
 }
