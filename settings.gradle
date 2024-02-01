@@ -8,3 +8,4 @@ include ':exercises'
 include ':profexercises'
 
 include ':assign01'
+include ':assign02'

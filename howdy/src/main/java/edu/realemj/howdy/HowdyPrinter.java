@@ -9,6 +9,7 @@ public class HowdyPrinter {
         System.out.println("So long!");
         System.out.println("Farewell!");
         System.out.println("Goodbye!");
+        System.out.println("So long!");
         System.out.println("*********************");
     }
 

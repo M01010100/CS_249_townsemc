@@ -6,4 +6,5 @@ module profexercisesmod {
     opens edu.realemj.exercises00 to javafx.fxml;
 
     exports edu.realemj.exercises00;
+    exports edu.realemj.exercises02;
 }
