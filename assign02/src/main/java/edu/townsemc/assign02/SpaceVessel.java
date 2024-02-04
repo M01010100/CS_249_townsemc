@@ -29,7 +29,7 @@ public class SpaceVessel {
         return meters;
     }
     public String getWeightString(){
-        String Kilos;
+        String Kilos = "";
         Kilos = weight + " lbs. (" + String.format("%.2f", weight * 0.4536) + " kg)";
         return Kilos;
     }
