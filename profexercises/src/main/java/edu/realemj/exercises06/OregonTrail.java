@@ -6,6 +6,7 @@ public class OregonTrail {
         Scanner input = new Scanner(System.in);
 
         Supplies supplies = new Supplies();
+        Supplies other = new Supplies(200);
         GeneralStore store = new GeneralStore();
 
         printSupplies("BEFORE:", supplies);
