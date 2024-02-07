@@ -9,4 +9,5 @@ module exercisesmod {
     exports edu.townsemc.exercises02;
     exports edu.townsemc.exercises03;
     exports edu.townsemc.exercises06;
+    exports edu.townsemc.exercises07;
 }
