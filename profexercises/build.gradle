@@ -25,7 +25,7 @@ test {
 }
 
 application {
-    mainClass = "edu.realemj.exercises07.MethodLand"
+    mainClass = "edu.realemj.exercises09.MatrixLand"
     mainModule = "profexercisesmod"
 }
 
