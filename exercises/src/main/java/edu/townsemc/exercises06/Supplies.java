@@ -19,11 +19,22 @@ public class Supplies {
         return cnt;
     }
     public String toString() {
+        /*
         String s = "";
-        s += "*****************\n";
+        s += "*******************\n";
         s += "SUPPLIES:\n";
-        s += "Food: " + totalFood +"\n";
-        s += "*****************\n";
+        s += "Food: " + totalFood + "\n";
+        s += "*******************\n";
+        return s;*/
+        return toString("*******************");
+    }
+
+    public String toString(String bound) {
+        String s = "";
+        s += bound + "\n";
+        s += "SUPPLIES:\n";
+        s += "Food: " + totalFood + "\n";
+        s += bound + "\n";
         return s;
     }
 }
