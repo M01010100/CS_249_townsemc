@@ -5,6 +5,14 @@ public class Matrix {
     public Matrix(int rowCnt, int colCnt){
         m = new double[rowCnt][colCnt];
     }
+    public Matrix(Matrix other){
+        m = new double[other.getRowCnt()][other.getColCnt()];
+        for(int i = 0; i < m.length; i++){
+            for(int j = 0; j < m[i].length; j++){
+                m[i][j] = other.m[i][j];
+            }
+        }
+    }
 
     public int getRowCnt(){
         return m.length;
@@ -47,5 +55,39 @@ public class Matrix {
             sb.append("\n");
         }
         return sb.toString();
+    }
+    public Matrix multiply(Matrix other){
+        if (getColCnt() != other.getColCnt()){
+            System.err.println("Cannot Multiply");
+            return null;
+        }
+        //Matrix w = m.multiply(v); [m][v]
+        Matrix r = new Matrix(getRowCnt(), other.getColCnt());
+        for(int i =0; i < r.getRowCnt(); i++){
+            for(int j =0; j < r.getColCnt(); j++){
+                //r[i][j]
+                for(int k = 0; k < getColCnt(); k++){
+                    double val = get(i,k)*other.get(k,j);
+                    r.set(i,j,r.get(i,j)+val);
+                }
+            }
+        }
+        return r;
+    }
+    public static Matrix makePoint2D(double x, double y){
+        Matrix v = new Matrix(3,1);
+        v.set(0,0,x);
+        v.set(1,0,y);
+        v.set(2,0,1);
+        return v;
+    }
+    public static Matrix makeTranslation2D(double tx, double ty){
+        Matrix m = new Matrix(3,3);
+        m.set(0,0,1);
+        m.set(1,1,1);
+        m.set(2,2,1);
+        m.set(0,2,tx);
+        m.set(1,2,ty);
+        return m;
     }
 }
