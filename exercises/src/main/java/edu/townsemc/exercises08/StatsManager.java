@@ -15,7 +15,7 @@ public class StatsManager {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter number Values: ");
         int cnt = input.nextInt();
-        double [] d = new double[5];
+        double [] d = getRandomDoubles(cnt, 200);
         Statistics s = new Statistics(d);
         System.out.println(s);
     }

@@ -13,12 +13,11 @@ public class Statistics {
         double sum = 0;
         /*for(int i =0; i < data.length; i++){
             sum += data[i];
-        }
-
-         */
+        }*/
         for(double d: data){
             sum += d;
         }
+
         double ave = sum/data.length;
         return ave;
     }
@@ -35,7 +34,8 @@ public class Statistics {
     public String toString() {
         double mean = getMean();
         double stddev = getStdDev();
-        String stat = "MEAN : " + mean +"\nStdDev : " + stddev;
+        String stat = "MEAN : " + mean;
+        stat += "\nStdDev : " + stddev;
         return stat;
     }
 }
