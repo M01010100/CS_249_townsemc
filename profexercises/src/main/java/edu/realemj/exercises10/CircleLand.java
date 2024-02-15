@@ -9,5 +9,7 @@ public class CircleLand {
         System.out.println(c);
         Circle c2 = new Circle(5.6, Matrix.makePoint2D(2,-3));
         System.out.println(c2);
+
+        boolean good = Circle.isValidRadius(5.7);
     }
 }

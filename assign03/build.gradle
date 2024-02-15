@@ -1,0 +1,33 @@
+plugins {   
+    id 'application'   
+}
+
+version = '1.0'
+
+repositories {  
+    mavenCentral()    
+}
+
+dependencies {
+    testImplementation(testFixtures(project(":coretest")))
+    testImplementation 'org.testng:testng:7.8.0'
+    testImplementation 'org.slf4j:slf4j-log4j12:1.7.36'
+}
+
+test {
+    useTestNG()
+}
+
+application {
+    mainClass = "edu.realemj.assign03.Hallmark"
+    mainModule = "assign03mod"
+}
+
+tasks.register('runApp', JavaExec) {
+    dependsOn build
+    classpath = sourceSets.main.runtimeClasspath
+    jvmArgs = ['--module-path', classpath.asPath]
+    mainModule = "assign03mod"
+    group "application"
+    standardInput = System.in
+}

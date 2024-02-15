@@ -21,9 +21,14 @@ public class Circle {
     }
 
     public void setRadius(double r) {
-        if(r >= 0) {
+        //if(r >= 0) {
+        if(isValidRadius(r)) {
             radius = r;
         }
+    }
+
+    public static boolean isValidRadius(double r) {
+        return (r >= 0);
     }
 
     public Matrix getCenter() {
