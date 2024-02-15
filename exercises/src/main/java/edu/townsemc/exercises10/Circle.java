@@ -1,7 +1,7 @@
 package edu.townsemc.exercises10;
 import edu.townsemc.exercises09.*;
 
-import edu.townsemc.exercises09.MatrixLand;
+import edu.townsemc.exercises09.*;
 
 public class Circle {
     private double radius = 1.0;
@@ -19,9 +19,12 @@ public class Circle {
         return radius;
     }
     public void setRadius(double r) {
-        if (r >= 0) {
+        if (isValidRadius(r)) {
             radius = r;
         }
+    }
+    public static boolean isValidRadius(double r){
+        return (r >=0);
     }
     public Matrix getCenter(){
         return new Matrix(pos);
