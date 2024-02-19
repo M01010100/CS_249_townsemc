@@ -11,11 +11,11 @@ public class GreetingCard {
      return boundaryChar;
     }
     public String getLines(){
-        StringBuilder sb = new StringBuilder();
+        StringBuilder gtLines = new StringBuilder();
         for(String line : lines){
-            sb.append(line).append("\n");
+            gtLines.append(line).append("\n");
         }
-        return sb.toString();
+        return gtLines.toString();
     }
     public void setBoundaryChar(char boundaryChar){
         this.boundaryChar=boundaryChar;
@@ -27,49 +27,50 @@ public class GreetingCard {
         }
     }
     public String generateBoundaryLine(){
-        StringBuilder sb = new StringBuilder();
+        StringBuilder Boundary = new StringBuilder();
         for(int i = 0; i < 50; i++){
-            sb.append(boundaryChar);
+            Boundary.append(boundaryChar);
         }
-        sb.append("\n");
-        return sb.toString();
+        Boundary.append("\n");
+        return Boundary.toString();
     }
     public String generateCenteredLine(String text){
         if(!text.isEmpty()){
             text = " " + text + " ";
         }
-        int totalPadding = 50 -text.length();
+        int totalPadding = 50 - text.length();
         int halfPadding = totalPadding /2;
         int secondPadding = totalPadding - halfPadding;
-        StringBuilder sb = new StringBuilder();
+        StringBuilder Centered = new StringBuilder();
         for(int i=0;i<halfPadding;i++){
-            sb.append(boundaryChar);
+            Centered.append(boundaryChar);
         }
-        sb.append(text);
+        Centered.append(text);
         for(int i=0;i<secondPadding;i++){
-            sb.append(boundaryChar);
+            Centered.append(boundaryChar);
         }
-        sb.append("\n");
-        return sb.toString();
+        Centered.append("\n");
+        return Centered.toString();
     }
+    //StringBuilder sb = new StringBuilder();
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        int remainingLines = lines.length;
-        for(int i = 0; i < lines.length; i +=5){
-            if(i < 0){
-                sb.append("\n").append(generateBoundaryLine()).append(generateBoundaryLine());
-                remainingLines -= 5;
+        int remainingLines = 5;
+        int currentLine = 0;
+        int cnt = 0;
+        while(currentLine < lines.length) {
+            sb.append(generateBoundaryLine()).append(generateBoundaryLine());
+            for (int i = 0; i < 5 && currentLine < lines.length; i++) {
+                sb.append(generateCenteredLine(lines[currentLine++]));
             }
-            int lineCnt = Math.min(remainingLines, 5);
-            int extraLineCnt = remainingLines < 5 ? 5 - remainingLines : 0;
-            for (int j = 0; j < lineCnt; j++){
-                sb.append(lines[i+j]).append("\n");
-            }
-            for (int k =0; k < extraLineCnt; k++){
+            for (int i = 0; i < remainingLines - lines.length; i++) {
                 sb.append(generateBoundaryLine());
             }
             sb.append(generateBoundaryLine()).append(generateBoundaryLine());
+            //break;
+            cnt++;
         }
+        //sb.append("\n");
         return sb.toString();
     }
 }

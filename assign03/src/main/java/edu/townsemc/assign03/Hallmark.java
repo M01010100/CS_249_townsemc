@@ -19,5 +19,6 @@ public class Hallmark {
         Scanner scanner = new Scanner(System.in);
         GreetingCard n = generateCard(scanner);
         System.out.println("For any occasion:");
+        System.out.println(n);
     }
 }
