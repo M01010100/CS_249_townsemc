@@ -1,14 +1,18 @@
 package edu.realemj.exercises10;
 import edu.realemj.exercises09.Matrix;
 public class Circle {
-    private double radius = 1.0;
+    private static final double DEFAULT_RADIUS = 1.0;
+    private double radius = DEFAULT_RADIUS; // 1.0;
     private Matrix pos = Matrix.makePoint2D(0,0);
 
-    public Circle() {}
+    public Circle() {
+        this(DEFAULT_RADIUS, Matrix.makePoint2D(0,0));
+    }
 
     public Circle(double r) {
+        this(r, Matrix.makePoint2D(0,0));
         //radius = r;
-        setRadius(r);
+        //setRadius(r);
     }
 
     public Circle(double r, Matrix c) {
@@ -20,10 +24,10 @@ public class Circle {
         return radius;
     }
 
-    public void setRadius(double r) {
+    public void setRadius(double radius) {
         //if(r >= 0) {
-        if(isValidRadius(r)) {
-            radius = r;
+        if(isValidRadius(radius)) {
+            this.radius = radius;
         }
     }
 
@@ -49,5 +53,18 @@ public class Circle {
         s += "center = \n";
         s += pos + "\n";
         return s;
+    }
+
+    public void judgeMyself() {
+        judgeCircle(this);
+    }
+
+    public static void judgeCircle(Circle c) {
+        if(c.getRadius() > 5.0) {
+            System.out.println("BIG CIRCLE");
+        }
+        else {
+            System.out.println("small circle");
+        }
     }
 }
