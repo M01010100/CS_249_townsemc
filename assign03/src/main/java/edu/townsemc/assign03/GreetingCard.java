@@ -1,5 +1,4 @@
 package edu.townsemc.assign03;
-
 public class GreetingCard {
     private char boundaryChar;
     private String[] lines;
@@ -8,7 +7,7 @@ public class GreetingCard {
         setBoundaryChar(boundaryChar);
     }
     public char getBoundaryChar(){
-     return boundaryChar;
+        return boundaryChar;
     }
     public String getLines(){
         StringBuilder gtLines = new StringBuilder();
@@ -57,20 +56,16 @@ public class GreetingCard {
         StringBuilder sb = new StringBuilder();
         int remainingLines = 5;
         int currentLine = 0;
-        int cnt = 0;
-        while(currentLine < lines.length) {
-            sb.append(generateBoundaryLine()).append(generateBoundaryLine());
-            for (int i = 0; i < 5 && currentLine < lines.length; i++) {
-                sb.append(generateCenteredLine(lines[currentLine++]));
+            while(currentLine < lines.length) {
+                sb.append(generateBoundaryLine()).append(generateBoundaryLine());
+                for (int i = 0; i < 5 && currentLine < lines.length; i++) {
+                    sb.append(generateCenteredLine(lines[currentLine++]));
+                }
+                for (int i = 0; i < remainingLines - lines.length; i++) {
+                    sb.append(generateBoundaryLine());
+                }
+                sb.append(generateBoundaryLine()).append(generateBoundaryLine());
             }
-            for (int i = 0; i < remainingLines - lines.length; i++) {
-                sb.append(generateBoundaryLine());
-            }
-            sb.append(generateBoundaryLine()).append(generateBoundaryLine());
-            //break;
-            cnt++;
-        }
-        //sb.append("\n");
         return sb.toString();
     }
 }
