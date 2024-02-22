@@ -101,4 +101,7 @@ public class Matrix {
         return m;
     }
 
+    public String toPoint2DString() {
+        return "(" + m[0][0] + "," + m[1][0] + ")";
+    }
 }

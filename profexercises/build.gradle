@@ -25,7 +25,7 @@ test {
 }
 
 application {
-    mainClass = "edu.realemj.exercises10.CircleLand"
+    mainClass = "edu.realemj.exercises12.ShapeLand"
     mainModule = "profexercisesmod"
 }
 
