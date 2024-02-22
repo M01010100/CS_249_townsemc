@@ -90,4 +90,7 @@ public class Matrix {
         m.set(1,2,ty);
         return m;
     }
+    public String toPoint2DString(){
+        return "(" + m[0][0] + "," + m[1][0] + ")";
+    }
 }

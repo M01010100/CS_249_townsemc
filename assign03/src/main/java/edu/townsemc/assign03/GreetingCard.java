@@ -22,7 +22,7 @@ public class GreetingCard {
     public void setLines(String[] lines){
         this.lines = new String[lines.length];
         for(int i = 0; i < lines.length; i++){
-            this.lines[i]=lines[i];
+            this.lines[i]=lines[i].trim();
         }
     }
     public String generateBoundaryLine(){
@@ -34,8 +34,11 @@ public class GreetingCard {
         return Boundary.toString();
     }
     public String generateCenteredLine(String text){
+        text = text.trim();
         if(!text.isEmpty()){
             text = " " + text + " ";
+        }else{
+            return generateBoundaryLine();
         }
         int totalPadding = 50 - text.length();
         int halfPadding = totalPadding /2;
@@ -56,16 +59,32 @@ public class GreetingCard {
         StringBuilder sb = new StringBuilder();
         int remainingLines = 5;
         int currentLine = 0;
-            while(currentLine < lines.length) {
-                sb.append(generateBoundaryLine()).append(generateBoundaryLine());
+        int cnt = 0;
+        while(currentLine < lines.length) {
+            cnt = 0;
+            if(currentLine !=0){
+                sb.append("\n");
+            }
+            sb.append(generateBoundaryLine()).append(generateBoundaryLine());
+            cnt+=2;
                 for (int i = 0; i < 5 && currentLine < lines.length; i++) {
                     sb.append(generateCenteredLine(lines[currentLine++]));
+                    cnt++;
                 }
                 for (int i = 0; i < remainingLines - lines.length; i++) {
                     sb.append(generateBoundaryLine());
+                    cnt++;
                 }
-                sb.append(generateBoundaryLine()).append(generateBoundaryLine());
+            sb.append(generateBoundaryLine()).append(generateBoundaryLine());
+            cnt++;cnt++;
+            //System.out.println("\t" + cnt + " " + currentLine);
+            if(cnt != 9 &&currentLine != 0){
+                for(int i = cnt; i < 9; i++) {
+                    sb.append(generateBoundaryLine());
+                }
             }
+        }
+        //System.out.println(cnt);
         return sb.toString();
     }
 }
