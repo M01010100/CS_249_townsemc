@@ -7,5 +7,7 @@ public class ShapeLand {
         Circle c1 = new Circle();
         c1.setCenter(Matrix.makePoint2D(8,9));
         System.out.println(c1);
+        Rectangle r1 = new Rectangle(24, 14.7);
+        System.out.println(r1);
     }
 }
