@@ -93,4 +93,25 @@ public class Matrix {
     public String toPoint2DString(){
         return "(" + m[0][0] + "," + m[1][0] + ")";
     }
+
+    @Override
+    public boolean equals(Object other){
+        boolean same = false;
+        if(other instanceof Matrix otherM){
+            if(this.getRowCnt() == otherM.getRowCnt() && this.getColCnt() == otherM.getColCnt()){
+                final double EPS = 1e-10;
+                boolean valuesSame = true;
+                for(int r=0;r<getRowCnt(); r++){
+                    for(int c = 0; c< getColCnt(); c++){
+                        //if(Math.abs(m[r][c] - otherM[r][c])>EPS){
+                            valuesSame = false;
+                         //   break;
+                       // }
+                    }
+                }
+                same = valuesSame;
+            }
+        }
+        return same;
+    }
 }

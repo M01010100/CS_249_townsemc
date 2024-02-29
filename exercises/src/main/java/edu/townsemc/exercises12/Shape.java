@@ -26,6 +26,7 @@ public class Shape {
     public void setCenter(Matrix center){
         this.center = new Matrix(center);
     }
+    @Override
     public String toString(){
         String s = "Shape: ";
         s += center.toPoint2DString();
@@ -33,5 +34,18 @@ public class Shape {
             s += ", filled";
         }
         return s;
+    }
+    public double getArea() {
+        return 0;
+    }
+    @Override
+    public boolean equals(Object other) {
+        boolean same = false;
+        if(other instanceof Shape otherS){
+            if(filled == otherS.filled) {
+
+            }
+        }
+        return false;
     }
 }

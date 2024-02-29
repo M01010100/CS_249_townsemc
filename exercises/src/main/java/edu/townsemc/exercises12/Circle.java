@@ -4,18 +4,21 @@ public class Circle extends Shape{
     private static final double DEFAULT_RADIUS = 1.0;
     private double radius = DEFAULT_RADIUS;
     public Circle(){
-        this(DEFAULT_RADIUS, Matrix.makePoint2D(0,0));
+        //Inserts super();
+        //this(DEFAULT_RADIUS, Matrix.makePoint2D(0,0));
     }
     public Circle(double r){
         this(r, Matrix.makePoint2D(0,0));
     }
     public Circle(double r, Matrix c){
+        super(c);
         setRadius(r);
-        setCenter(c);
+        //setCenter(c);
     }
     public Circle(double r, Matrix c, boolean filled){
+        super(c, filled);
         setRadius(r);
-        setCenter(c);
+        //setCenter(c);
         this.filled=filled;
     }
     public double getRadius(){
@@ -32,7 +35,10 @@ public class Circle extends Shape{
     public double getArea(){
         return Math.PI * radius * radius;
     }
-    //public String toString(){
-    //    return " "
-   // }
+    public String toString(){
+        String s = "Circle: ";
+        s += "radius = " + radius;
+        s += " --> " + super.toString();
+        return s;
+    }
 }
