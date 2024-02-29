@@ -1,0 +1,33 @@
+plugins {
+    id 'application'
+}
+
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(testFixtures(project(":coretest")))
+    testImplementation 'org.testng:testng:7.8.0'
+    testImplementation 'org.slf4j:slf4j-log4j12:1.7.36'
+}
+
+test {
+    useTestNG()
+}
+
+application {
+    mainClass = "edu.realemj.assign04.DraftingTable"
+    mainModule = "assign04mod"
+}
+
+tasks.register('runApp', JavaExec) {
+    dependsOn compileJava
+    classpath = sourceSets.main.runtimeClasspath
+    jvmArgs = ['--module-path', classpath.asPath]
+    mainModule = "assign04mod"
+    group "application"
+    standardInput = System.in
+}
