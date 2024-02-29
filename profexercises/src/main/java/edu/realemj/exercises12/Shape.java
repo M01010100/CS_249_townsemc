@@ -50,8 +50,8 @@ public class Shape {
     public boolean equals(Object other) {
         boolean same = false;
         if(other instanceof Shape otherS) {
-            if(filled == otherS.filled) {
-
+            if(filled == otherS.filled && center.equals(otherS.center)) {
+                same = true;
             }
         }
         return same;

@@ -57,4 +57,16 @@ public class Circle extends Shape {
         return s;
     }
 
+    @Override
+    public boolean equals(Object other) {
+        boolean same = false;
+        if(other instanceof Circle otherC) {
+            final double EPS = 1e-10;
+            if(Math.abs(radius - otherC.radius) <= EPS
+                && super.equals(otherC)) {
+                same = true;
+            }
+        }
+        return same;
+    }
 }
