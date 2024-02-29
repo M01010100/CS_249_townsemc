@@ -112,11 +112,10 @@ public class Matrix {
             if(this.getRowCnt() == otherM.getRowCnt() &&
                 this.getColCnt() == otherM.getColCnt()) {
 
-                final double EPS = 1e-10;
                 boolean valuesSame = true;
                 for(int r = 0; r < getRowCnt(); r++) {
                     for(int c = 0; c < getColCnt(); c++) {
-                        if(Math.abs(m[r][c] - otherM.m[r][c]) > EPS) {
+                        if(!MathCompare.equalDoubles(m[r][c], otherM.m[r][c])) {
                             valuesSame = false;
                             break;
                         }
