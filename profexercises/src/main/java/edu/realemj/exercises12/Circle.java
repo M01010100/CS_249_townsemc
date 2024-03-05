@@ -1,6 +1,6 @@
 package edu.realemj.exercises12;
 
-import edu.realemj.exercises09.Matrix;
+import edu.realemj.exercises09.*;
 
 public class Circle extends Shape {
     private static final double DEFAULT_RADIUS = 1.0;
@@ -61,8 +61,7 @@ public class Circle extends Shape {
     public boolean equals(Object other) {
         boolean same = false;
         if(other instanceof Circle otherC) {
-            final double EPS = 1e-10;
-            if(Math.abs(radius - otherC.radius) <= EPS
+            if(MathCompare.equalDoubles(radius, otherC.radius)
                 && super.equals(otherC)) {
                 same = true;
             }
