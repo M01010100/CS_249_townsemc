@@ -19,7 +19,7 @@ test {
 }
 
 application {
-    mainClass = "edu.realemj.assign04.DraftingTable"
+    mainClass = "edu.townsemc.assign04.DraftingTable"
     mainModule = "assign04mod"
 }
 
