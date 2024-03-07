@@ -4,7 +4,9 @@ import edu.realemj.exercises10.*;
 import java.util.*;
 public class PartyMaker {
     public static void main(String [] args) {
-        Scanner input = new Scanner(System.in);
+        //Scanner input = new Scanner(System.in);
+
+        Scanner input = SystemInputSingleton.getInstance().getScanner();
         ArrayList<String> names = new ArrayList<>();
 
         String n = "";
@@ -31,6 +33,13 @@ public class PartyMaker {
         names.remove("PERSON D");
 
         System.out.println("NAMES AGAIN:");
+        for(String s : names) {
+            System.out.println("* " + s);
+        }
+
+        names.clear();
+
+        System.out.println("NAMES AGAIN (after clear):");
         for(String s : names) {
             System.out.println("* " + s);
         }
