@@ -3,7 +3,10 @@ import edu.townsemc.exercises10.*;
 import java.util.*;
 public class PartyMaker {
         public static void main(String [] args) {
-            Scanner input = new Scanner(System.in);
+            //Scanner input = new Scanner(System.in);
+            Scanner input = SystemInputSingleton.getInstance().getScanner();
+
+
             ArrayList<String> names = new ArrayList<>();
 
             String n = "";
