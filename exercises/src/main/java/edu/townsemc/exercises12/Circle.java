@@ -41,4 +41,14 @@ public class Circle extends Shape{
         s += " --> " + super.toString();
         return s;
     }
+    @Override
+    public  boolean equals(Object other) {
+        boolean same = false;
+        if (other instanceof Circle otherC) {
+            if (MathCompare.equalDoubles(radius ,otherC.radius) && super.equals(otherC)) {
+                same = true;
+            }
+        }
+        return same;
+    }
 }

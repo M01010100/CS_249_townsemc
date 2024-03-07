@@ -95,20 +95,21 @@ public class Matrix {
     }
 
     @Override
-    public boolean equals(Object other){
+    public boolean equals(Object other) {
         boolean same = false;
-        if(other instanceof Matrix otherM){
-            if(this.getRowCnt() == otherM.getRowCnt() && this.getColCnt() == otherM.getColCnt()){
-                final double EPS = 1e-10;
+        if(other instanceof Matrix otherM) {
+            if(this.getRowCnt() == otherM.getRowCnt() &&
+                    this.getColCnt() == otherM.getColCnt()) {
                 boolean valuesSame = true;
-                for(int r=0;r<getRowCnt(); r++){
-                    for(int c = 0; c< getColCnt(); c++){
-                        //if(Math.abs(m[r][c] - otherM[r][c])>EPS){
+                for(int r = 0; r < getRowCnt(); r++) {
+                    for(int c = 0; c < getColCnt(); c++) {
+                        if(!MathCompare.equalDoubles(m[r][c] ,otherM.m[r][c])){
                             valuesSame = false;
-                         //   break;
-                       // }
+                            break;
+                        }
                     }
                 }
+
                 same = valuesSame;
             }
         }

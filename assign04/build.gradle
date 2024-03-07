@@ -1,22 +1,16 @@
-plugins {   
+plugins {
     id 'application'
-    id 'org.openjfx.javafxplugin' version '0.1.0'
 }
 
 version = '1.0'
 
-repositories {  
-    mavenCentral()    
-}
-
-javafx {
-    version = "20"
-    modules = [ 'javafx.controls', 'javafx.fxml']
+repositories {
+    mavenCentral()
 }
 
 dependencies {
     testImplementation(testFixtures(project(":coretest")))
-    testImplementation 'org.testng:testng:7.9.0'
+    testImplementation 'org.testng:testng:7.8.0'
     testImplementation 'org.slf4j:slf4j-log4j12:1.7.36'
 }
 
@@ -25,15 +19,15 @@ test {
 }
 
 application {
-    mainClass = "edu.townsemc.exercises12.PartyMaker"
-    mainModule = "exercisesmod"
+    mainClass = "edu.townsemc.assign04.DraftingTable"
+    mainModule = "assign04mod"
 }
 
 tasks.register('runApp', JavaExec) {
-    dependsOn build
+    dependsOn compileJava
     classpath = sourceSets.main.runtimeClasspath
     jvmArgs = ['--module-path', classpath.asPath]
-    mainModule = "exercisesmod"
+    mainModule = "assign04mod"
     group "application"
     standardInput = System.in
 }

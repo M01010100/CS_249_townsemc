@@ -1,13 +1,15 @@
 package edu.realemj.exercises12;
 
-import edu.realemj.exercises09.Matrix;
+import edu.realemj.exercises09.*;
 
 public class Circle extends Shape {
     private static final double DEFAULT_RADIUS = 1.0;
     private double radius = DEFAULT_RADIUS; // 1.0;
 
     public Circle() {
-        this(DEFAULT_RADIUS, Matrix.makePoint2D(0,0));
+        // Inserts: super() if this or super isn't present
+
+        //this(DEFAULT_RADIUS, Matrix.makePoint2D(0,0));
     }
 
     public Circle(double r) {
@@ -15,15 +17,17 @@ public class Circle extends Shape {
     }
 
     public Circle(double r, Matrix c) {
+        super(c);
         setRadius(r);
-        setCenter(c);
+        //setCenter(c);
     }
 
     public Circle(double r, Matrix c, boolean filled) {
+        super(c, filled);
         setRadius(r);
-        // WRONG: this.center = c;
-        setCenter(c);
-        this.filled = filled;
+
+        //setCenter(c);
+        //this.filled = filled;
     }
 
     public double getRadius() {
@@ -41,11 +45,27 @@ public class Circle extends Shape {
         return (r >= 0);
     }
 
+    @Override
     public double getArea() {
         return Math.PI * radius * radius;
     }
 
-    //public String toString() {
-    //    return "";
-    //}
+    public String toString() {
+        String s = "Circle: ";
+        s += "radius=" + radius;
+        s += " --> " + super.toString();
+        return s;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        boolean same = false;
+        if(other instanceof Circle otherC) {
+            if(MathCompare.equalDoubles(radius, otherC.radius)
+                && super.equals(otherC)) {
+                same = true;
+            }
+        }
+        return same;
+    }
 }
