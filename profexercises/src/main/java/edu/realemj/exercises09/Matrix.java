@@ -91,6 +91,22 @@ public class Matrix {
         return v;
     }
 
+    public static Matrix makePoint3D(double x, double y, double z) {
+        Matrix v = new Matrix(4, 1);
+        v.set(0,0, x);
+        v.set(1,0, y);
+        v.set(2, 0, z);
+        v.set(3, 0, 1);
+        return v;
+    }
+
+    public String getOBJVertexString() {
+        return "v "
+                + get(0,0) + " "
+                + get(1,0) + " "
+                + get(2,0);
+    }
+
     public static Matrix makeTranslation2D(double tx, double ty) {
         Matrix m = new Matrix(3,3);
         m.set(0,0, 1);
