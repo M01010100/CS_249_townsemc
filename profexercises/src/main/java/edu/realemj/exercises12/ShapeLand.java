@@ -5,7 +5,8 @@ import java.util.*;
 
 public class ShapeLand {
     public static void main(String [] args) {
-        Shape s1 = new Shape(Matrix.makePoint2D(-5,3), true);
+        //Shape s1 = new Shape(Matrix.makePoint2D(-5,3), true);
+        Shape s1 = new Square();
         System.out.println(s1);
         Circle c1 = new Circle();
         c1.setCenter(Matrix.makePoint2D(8,9));
