@@ -62,4 +62,10 @@ public class OBJModel {
             throw new IOException("Could not load file: " + filename, e);
         }
     }
+
+    public void transform(Matrix m) {
+        for(int i = 0; i < vertices.size(); i++) {
+            vertices.set(i, m.multiply(vertices.get(i)));
+        }
+    }
 }
