@@ -69,4 +69,9 @@ public class OBJModel {
             }
         }
     }
+    public void transform(Matrix m){
+        for(int i = 0; i < vertices.size(); i++){
+            vertices.set(i,m.multiply(vertices.get(i)));
+        }
+    }
 }

@@ -114,6 +114,24 @@ public class Matrix {
         return m;
     }
 
+    public static Matrix makeScaling3D(double sx, double sy, double sz) {
+        Matrix m = new Matrix(4,4);
+        m.set(0,0, sx);
+        m.set(1,1,sy);
+        m.set(2,2,sz);
+        m.set(2,2,1);
+        return m;
+    }
+
+    public static Matrix makeRotationZ3D(double angle) {
+        Matrix m = new Matrix(4,4);
+        double rad = Math.toRadians(angle);
+        m.set(0,0, Math.cos(rad));
+        m.set(0,1, -Math.sin(rad));
+        //m.set(2,2,sz);
+        m.set(2,2,1);
+        return m;
+    }
     public String toPoint2DString() {
         return "(" + m[0][0] + "," + m[1][0] + ")";
     }
