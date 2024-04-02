@@ -19,7 +19,7 @@ test {
 }
 
 application {
-    mainClass = "edu.realemj.assign05.Silmarillion"
+    mainClass = "edu.townsemc.assign05.Silmarillion"
     mainModule = "assign05mod"    
 }
 

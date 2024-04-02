@@ -4,14 +4,14 @@ import edu.townsemc.exercises13.InvalidRadiusException;
 import java.util.*;
 public class ShapeLand {
     public static void main(String [] args) {
-        Shape s1 = new Shape(Matrix.makePoint2D(-5,3), true);
+        //Shape s1 = new Shape(Matrix.makePoint2D(-5,3), true);
+        Shape s1 = new Square();
         System.out.println(s1);
         Circle c1 = new Circle();
         c1.setCenter(Matrix.makePoint2D(8,9));
         System.out.println(c1);
         Rectangle r1 = new Rectangle(24,14.7);
         System.out.println(r1);
-
         try {
             Circle c2 = new Circle(5.0);
             Circle c3 = new Circle(-7.0);
@@ -27,12 +27,11 @@ public class ShapeLand {
         myShapes[0] = s1;
         myShapes[1] = c1;
         myShapes[2] = r1;
-
         System.out.println("MY SHAPES: ");
+
         for(Shape s : myShapes) {
             System.out.println("* " + s);
         }
-
         try{
             Scanner input = new Scanner(System.in);
             Circle c4 = askForCircleInfo(input);
@@ -43,7 +42,6 @@ public class ShapeLand {
         }
         System.out.println("DONE");
     }
-
     public static void printArea(Shape s){
         System.out.println("** AREA OF THIS MAGNIFICENT SHAPE ******");
         System.out.println(s.getArea());
@@ -55,7 +53,7 @@ public class ShapeLand {
     }
     public static Circle askForCircleInfo(Scanner s) throws InvalidRadiusException{
         Circle c = null;
-        try {0
+        try {
             System.out.println("Enter radius value:");
             double r = s.nextDouble();
             c = new Circle(r);

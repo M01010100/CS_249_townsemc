@@ -3,7 +3,7 @@ import java.util.*;
 import java.io.*;
 import edu.townsemc.exercises09.*;
 public class OBJModel {
-    private ArrayList<Matrix> vertices = new ArrayList<Matrix>();
+    private ArrayList<Matrix> vertices = new ArrayList<>();
     private ArrayList<Integer> indices = new ArrayList<>();
 
     public void save(String filename) throws IOException{
@@ -48,25 +48,13 @@ public class OBJModel {
                         indices.add(parseLine.nextInt());
                         indices.add(parseLine.nextInt());
                     }
-            }   }
+                }
+            }
         }
         catch (Exception e){
             vertices.clear();
             indices.clear();
             throw new IOException("Could Not load file" + filename,e);
-        }
-    }
-    public class Rescaler {
-        public static void main(String [] args){
-            OBJModel model = new OBJModel();
-
-            try{
-                model.load("bunny.obj");
-                model.save("bunny.obj");
-            }
-            catch (Exception e){
-                e.printStackTrace();
-            }
         }
     }
     public void transform(Matrix m){

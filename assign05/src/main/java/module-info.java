@@ -1,3 +1,3 @@
 module assign05mod {    
-    exports edu.realemj.assign05;
+    exports edu.townsemc.assign05;
 }

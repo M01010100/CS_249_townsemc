@@ -128,8 +128,11 @@ public class Matrix {
         double rad = Math.toRadians(angle);
         m.set(0,0, Math.cos(rad));
         m.set(0,1, -Math.sin(rad));
-        //m.set(2,2,sz);
+        m.set(1,0, Math.sin(rad));
+        m.set(1,1, Math.cos(rad));
+
         m.set(2,2,1);
+        m.set(3,3, 1);
         return m;
     }
     public String toPoint2DString() {
