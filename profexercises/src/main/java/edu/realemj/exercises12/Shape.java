@@ -1,17 +1,17 @@
 package edu.realemj.exercises12;
 import edu.realemj.exercises09.Matrix;
-public class Shape {
+public abstract class Shape {
     private Matrix center = Matrix.makePoint2D(0,0);
     protected boolean filled = true;
 
-    public Shape() {}
+    protected Shape() {}
 
-    public Shape(Matrix center) {
+    protected Shape(Matrix center) {
         //this.center = new Matrix(center);
         this(center, true);
     }
 
-    public Shape(Matrix center, boolean filled) {
+    protected Shape(Matrix center, boolean filled) {
         this.center = new Matrix(center);
         this.filled = filled;
     }
@@ -42,9 +42,7 @@ public class Shape {
         return s;
     }
 
-    public double getArea() {
-        return 0.0;
-    }
+    public abstract double getArea();
 
     @Override
     public boolean equals(Object other) {

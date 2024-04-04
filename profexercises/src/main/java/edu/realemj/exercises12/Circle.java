@@ -3,7 +3,7 @@ package edu.realemj.exercises12;
 import edu.realemj.exercises09.*;
 import edu.realemj.exercises13.InvalidRadiusException;
 
-public class Circle extends Shape {
+public class Circle extends Shape implements Comparable<Circle> {
     private static final double DEFAULT_RADIUS = 1.0;
     private double radius = DEFAULT_RADIUS; // 1.0;
 
@@ -71,5 +71,19 @@ public class Circle extends Shape {
             }
         }
         return same;
+    }
+
+    public int compareTo(Circle other) {
+        // NOTE: Ordinarily would call .equals, BUT
+        // also need to fold in Shape's data
+        if(MathCompare.equalDoubles(radius, other.radius)) {
+            return 0;
+        }
+        else if(this.radius < other.radius) {
+            return -1;
+        }
+        else {
+            return +1;
+        }
     }
 }
