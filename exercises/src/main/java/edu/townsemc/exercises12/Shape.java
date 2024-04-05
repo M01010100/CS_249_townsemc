@@ -1,19 +1,17 @@
 package edu.townsemc.exercises12;
 import edu.townsemc.exercises09.*;
-public class Shape {
+public abstract class Shape {
     private Matrix center = Matrix.makePoint2D(0,0);
     protected boolean filled = true;
-    public Shape(){}
-
-    public Shape(Matrix center){
+    protected Shape(){}
+    protected Shape(Matrix center){
         //this.center = new Matrix(center);
         this(center,true);
     }
-    public Shape(Matrix center, boolean filled){
+    protected Shape(Matrix center, boolean filled){
         this.center = new Matrix(center);
         this.filled = filled;
     }
-
     public boolean isFilled(){
         return filled;
     }
@@ -35,9 +33,7 @@ public class Shape {
         }
         return s;
     }
-    public double getArea() {
-        return 0;
-    }
+    public abstract double getArea();
     @Override
     public boolean equals(Object other) {
         boolean same = false;
@@ -49,4 +45,3 @@ public class Shape {
         return same;
     }
 }
-//
