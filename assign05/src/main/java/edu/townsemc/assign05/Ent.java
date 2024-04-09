@@ -10,5 +10,4 @@ public class Ent extends Tree{
     public String speak(){
         return "HOOM";
     }
-    //
 }
