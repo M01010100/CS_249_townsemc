@@ -1,0 +1,4 @@
+3
+Item CUP 5
+Tome TOME_OF_MAGIC 120 sorcery
+Item FORK 7

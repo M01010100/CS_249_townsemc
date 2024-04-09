@@ -1,0 +1,8 @@
+7
+Rat 10 12
+Tome GROGNAK_COMIC 170 courage
+Skeleton 3 7
+Rat 7
+Item SPOON 2
+Skeleton 11 2
+Tome TAO_OF_PROGRAMMING 25 wisdom
