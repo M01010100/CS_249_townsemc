@@ -7,4 +7,5 @@ import java.util.List;
 public class GameState implements Loadable{
     private List<Loadable> loadableList;
     private GameBoard map;
+
 }
