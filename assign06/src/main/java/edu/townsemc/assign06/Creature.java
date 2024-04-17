@@ -2,7 +2,7 @@ package edu.townsemc.assign06;
 
 import java.util.Scanner;
 
-public class Creature implements Loadable, Drawable {
+public abstract class Creature implements Loadable, Drawable {
     protected int row = 0;
     protected int col = 0;
 
