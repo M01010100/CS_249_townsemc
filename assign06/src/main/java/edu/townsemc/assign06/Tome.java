@@ -18,10 +18,10 @@ public class Tome extends Item{
         this.skill = skill;
     }
     public void read(){
-        System.out.println("Skill" + skill + "increased!");
+        System.out.println("Skill " + skill + " increased!");
     }
     public String toString(){
-        return super.toString() + ",enhances" + skill;
+        return super.toString() + ", enhances " + skill;
     }
     public void load(Scanner input) throws GameFileException{
         try{

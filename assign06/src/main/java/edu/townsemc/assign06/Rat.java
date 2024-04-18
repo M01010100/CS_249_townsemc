@@ -10,7 +10,7 @@ public class Rat extends Creature{
         super(row, col);
     }
     public String toString(){
-        return "Rat at" +getRow()+","+getCol();
+        return "Rat at " +getRow()+","+getCol();
     }
     public void draw(GameBoard map){
         map.setPos(getRow(),getCol(), 'R');

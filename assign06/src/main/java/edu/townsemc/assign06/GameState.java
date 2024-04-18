@@ -26,7 +26,7 @@ public class GameState implements Loadable{
             case "Tome":
                 return new Tome();
             default:
-                throw new GameFileException("Unkown type: "+typeName);
+                throw new GameFileException("Unknown type: "+typeName);
         }
     }
     public void load(Scanner input) throws GameFileException{
