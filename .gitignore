@@ -9,4 +9,6 @@ assign03/src/main/java/edu/realemj/assign03/*
 assign04/src/main/java/edu/realemj/assign04/*
 !assign04/src/main/java/edu/realemj/assign04/DraftingTable.java
 assign05/src/main/java/edu/realemj/assign05/*
-!assign05/src/main/java/edu/realemj/assign05/Silmarillion.java
+assign05/src/main/java/edu/realemj/assign05/Silmarillion.java
+!assign06/src/main/java/edu/townsemc/assign06/*
+!assign06/src/main/java/edu/townsemc/assign06/Oblivion.java

@@ -1,0 +1,5 @@
+4
+Skeleton 4 2
+Rat 7 15
+Rat 9 3
+Skeleton 10 4
