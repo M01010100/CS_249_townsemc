@@ -22,7 +22,7 @@ test {
 }
 
 application {
-    mainClass = "edu.realemj.assign07.Thunderdome"
+    mainClass = "edu.townsemc.assign07.Thunderdome"
     mainModule = "assign07mod"
 }
 

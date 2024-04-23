@@ -1,4 +1,4 @@
-package edu.realemj.assign07;
+package edu.townsemc.assign07;
 //NOTE: CHANGE realemj to YOUR SITNETID!!!
 
 import edu.realemj.testing.GeneralTesting;
