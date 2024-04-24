@@ -9,5 +9,4 @@ public class MediumRoast extends Beverage{
     public double cost(){
         return 2.99;
     }
-
 }
