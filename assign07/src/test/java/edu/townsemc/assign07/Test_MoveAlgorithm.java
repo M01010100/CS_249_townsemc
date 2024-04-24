@@ -1,7 +1,7 @@
 package edu.townsemc.assign07;
 
-import edu.realemj.assign06.Creature;
-import edu.realemj.assign06.Rat;
+import edu.townsemc.assign06.Creature;
+import edu.townsemc.assign06.Rat;
 import org.testng.annotations.Test;
 
 public class Test_MoveAlgorithm {

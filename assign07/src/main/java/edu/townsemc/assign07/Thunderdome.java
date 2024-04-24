@@ -1,7 +1,7 @@
 package edu.townsemc.assign07;
 
-import edu.realemj.assign04.GameBoard;
-import edu.realemj.assign06.*;
+import edu.townsemc.assign04.GameBoard;
+import edu.townsemc.assign06.*;
 import java.util.*;
 public class Thunderdome {
     public static void main(String [] args) {
