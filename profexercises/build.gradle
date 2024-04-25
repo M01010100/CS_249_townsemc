@@ -25,7 +25,7 @@ test {
 }
 
 application {
-    mainClass = "edu.realemj.exercises18.MyJavaFX"
+    mainClass = "edu.realemj.exercises18.LaserFX"
     mainModule = "profexercisesmod"
 }
 
