@@ -1,19 +1,46 @@
 package edu.townsemc.exercises18;
 import javafx.application.Application;
-import javafx.geometry.Pos;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.scene.control.*;
 import javafx.scene.Scene;
 
-public class MyJavaFX extends Application{
+public class LaserFX extends Application{
+    private int laserPower = 0;
+
+    public int getLaserPower(){
+        return laserPower;
+    }
+    public void setLaserPower(int power){
+        laserPower = power;
+    }
+
+
     public void start(Stage primaryStage){
         Button MyButton = new Button("Fire Laser");
 
-        Button [] gridButtons = new Button[5];
+        Button [] gridButtons = new Button[20];
         for(int j = 0; j< gridButtons.length; j++){
             gridButtons[j] = new Button(""+ (j+1));
         }
+
+            public void handle(ActionEvent e){
+                if(e.getSource() instanceof Button b){
+                    String text = b.getText();
+                    int score = Integer.parseInt(text);
+                    laserPower += score;
+                    System.out.println("New laser power: "+ laserPower);
+
+                }
+            }
+        }
+        InnerLaserPowerButtonHandler buttonHandler = new InnerLaserPowerButtonHandler();
+        for(Button b : gridButtons){
+            b.setOnAction(buttonHandler);
+        }
+
         /*
         StackPane pane= new StackPane();
         Pos [] allPos = {Pos.TOP_LEFT,Pos.TOP_RIGHT, Pos.BOTTOM_LEFT, Pos.BOTTOM_RIGHT, Pos.CENTER};
@@ -49,8 +76,6 @@ public class MyJavaFX extends Application{
         primaryStage.setTitle("Non-Descript Application");
         primaryStage.show();
     }
-
-
     public static void main(String [] args){
         launch(args);
     }
