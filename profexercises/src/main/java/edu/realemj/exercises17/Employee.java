@@ -21,7 +21,10 @@ public class Employee {
     }
 
     public int calcYearsOfService(int currentYear) {
-        // TODO
-        return 0;
+        return currentYear - yearStarted;
+    }
+
+    public String toString() {
+        return "Employee: " + name + " (started " + yearStarted + ")";
     }
 }
